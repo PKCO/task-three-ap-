@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Challenge</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/task-3/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Knowledge Challenge</h1>
+            <p class="tagline">Test your knowledge at any age!</p>
+        </header>
+
+        <div class="age-selector" id="ageSelector">
+            <h2>Select Your Age Group</h2>
+            <div class="age-options">
+                <button class="age-btn" data-age="child">Under 10</button>
+                <button class="age-btn" data-age="teen">10-19</button>
+                <button class="age-btn" data-age="young-adult">20-29</button>
+                <button class="age-btn" data-age="adult">30+</button>
+            </div>
+            <button class="start-btn" id="startQuiz">Start Quiz</button>
+        </div>
+
+        <div class="quiz-container" id="quizContainer">
+            <div class="quiz-carousel" id="quizCarousel"></div>
+            
+            <div class="carousel-indicators" id="carouselIndicators"></div>
+            
+            <div class="score-container">
+                Score: <span class="score-value" id="scoreValue">0</span>
+            </div>
+        </div>
+
+        <div class="results-container" id="resultsContainer">
+            <h2>Quiz Completed!</h2>
+            <div class="final-score" id="finalScore"></div>
+            <div class="celebration-message" id="celebrationMessage"></div>
+            <div class="high-score" id="highScore"></div>
+            
+            <div class="stats-container">
+                <h3 class="stats-title">Your Statistics</h3>
+                <div class="stats-item">
+                    <span>Total Quizzes Taken:</span>
+                    <span id="totalQuizzes">0</span>
+                </div>
+                <div class="stats-item">
+                    <span>Average Score:</span>
+                    <span id="averageScore">0%</span>
+                </div>
+                <div class="stats-item">
+                    <span>Best Category:</span>
+                    <span id="bestCategory">-</span>
+                </div>
+            </div>
+            
+            <button class="restart-btn" id="restartQuiz">Take Another Quiz</button>
+        </div>
+    </div>
+
+    <script src="/task-3/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>

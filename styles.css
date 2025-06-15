@@ -1,0 +1,360 @@
+:root {
+    --primary: #3a5a40;  
+    --secondary: #588157;  
+    --accent: #a3b18a;  
+    --text-dark: #344e41; 
+    --text-light: #f8f9fa;  
+    --text-accent: #dad7cd; 
+    --success: #4caf50;    
+    --warning: #ff9800;    
+    --danger: #f44336;    
+    --bg-overlay: rgba(255, 255, 255, 0.85); 
+}
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), 
+                url('https://static.vecteezy.com/system/resources/previews/031/606/070/non_2x/abstract-tree-growing-from-a-book-mental-training-and-education-concept-free-photo.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh;
+}
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+        }
+
+        .tagline {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .age-selector {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 500px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+
+        .age-selector h2 {
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .age-options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .age-btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            background: var(--light);
+            color: var(--dark);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .age-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .age-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .start-btn {
+            padding: 0.8rem 2rem;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .start-btn:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .quiz-container {
+            display: none;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.93);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .quiz-carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .quiz-slide {
+            min-width: 100%;
+            padding: 2rem;
+        }
+
+        .question-container {
+            margin-bottom: 2rem;
+        }
+
+        .question-number {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .question-text {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .options-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .option {
+            padding: 1rem;
+            background: var(--light);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .option:hover {
+            background: #e9ecef;
+        }
+
+        .option.selected {
+            background: var(--primary);
+            color: white;
+        }
+
+        .option.correct {
+            background: var(--success);
+            color: white;
+        }
+
+        .option.incorrect {
+            background: var(--danger);
+            color: white;
+        }
+
+        .option input {
+            margin-right: 1rem;
+        }
+
+        .feedback {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            display: none;
+        }
+
+        .feedback.correct {
+            background: rgba(76, 175, 80, 0.2);
+            color: var(--success);
+            display: block;
+        }
+
+        .feedback.incorrect {
+            background: rgba(244, 67, 54, 0.2);
+            color: var(--danger);
+            display: block;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .nav-btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            background: var(--primary);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: var(--secondary);
+        }
+
+        .nav-btn:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #e9ecef;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .indicator.active {
+            background: var(--primary);
+        }
+
+        .score-container {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 1.2rem;
+        }
+
+        .score-value {
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .results-container {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .results-container h2 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .final-score {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .high-score {
+            color: var(--success);
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+
+        .restart-btn {
+            padding: 0.8rem 2rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+
+        .restart-btn:hover {
+            background: var(--secondary);
+        }
+
+        .stats-container {
+            margin-top: 2rem;
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .stats-title {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .stats-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        .celebration-message {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    font-weight: bold;
+    color: var(--primary);
+    min-height: 2rem;
+}
+
+/* Add some animation */
+@keyframes celebrate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.final-score {
+    animation: celebrate 0.5s ease-in-out 2;
+}
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .quiz-slide {
+                padding: 1.5rem;
+            }
+            
+            .question-text {
+                font-size: 1.1rem;
+            }
+            
+            .options-container {
+                gap: 0.8rem;
+            }
+            
+            .option {
+                padding: 0.8rem;
+            }
+        }
